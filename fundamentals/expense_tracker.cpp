@@ -20,6 +20,12 @@ struct Transaction {
     float amount; 
 }; 
 
+vector<Transaction> transactions; 
+float total_income = 0;
+float total_expenses = 0;
+float balance = 0;
+
+
 
 int main() {
 
