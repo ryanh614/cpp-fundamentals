@@ -50,8 +50,9 @@ void add_expense(vector<Transaction> &transactions, float&total_expenses) {
 
 }
 
-void show_balance() {
-    
+void show_balance(float total_income, float total_expenses) {
+    float total_balance = total_income - total_expenses;
+    cout << "Total Balance: " << total_balance; 
 }
 
 void show_spending_breakdown() {
@@ -64,24 +65,21 @@ int main() {
     vector<Transaction> transactions; 
     float total_income = 0;
     float total_expenses = 0;
-    float balance = 0;
 
-    int input; 
-    cout << "Menu: \n 1. Add Income \n 2. Add Expense \n 3. Show Balance \n 4. Show Spending Breakdown \n 5. Quit \n";
-    cin >> input; 
+    int input = 0;
     while (input != 5) {
+         
+    cout << "Menu: \n 1. Add Income \n 2. Add Expense \n 3. Show Balance \n 4. Show Spending Breakdown \n 5. Quit \n";
+    cin >> input;
         switch (input) {
             case 1: 
                 add_income(transactions, total_income);
-                cout << total_income << endl;
                 break;
             case 2: 
                 add_expense(transactions, total_expenses);
-                cout << total_expenses << endl;
                 break; 
             case 3: 
-                show_balance();
-                cout << balance << endl;
+                show_balance(total_income, total_expenses);
                 break; 
             case 4: 
                 show_spending_breakdown();
