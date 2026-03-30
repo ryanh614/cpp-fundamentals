@@ -55,8 +55,13 @@ void show_balance(float total_income, float total_expenses) {
     cout << "Total Balance: " << total_balance; 
 }
 
-void show_spending_breakdown() {
-    
+void show_spending_breakdown(vector<Transaction> transactions) {
+    for (Transaction t: transactions) {
+        cout << "Type: " << t.type << endl;
+        cout << "Category: " << t.category << endl; 
+        cout << "Amount: " << t.amount << endl; 
+    }
+
 }
 
 int main() {
@@ -82,7 +87,7 @@ int main() {
                 show_balance(total_income, total_expenses);
                 break; 
             case 4: 
-                show_spending_breakdown();
+                show_spending_breakdown(transactions);
                 break;
             case 5: 
                 cout << "Goodbye!" << endl;
